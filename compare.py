@@ -4,12 +4,22 @@ import numpy as np
 import matplotlib.pyplot as plt
 import csv
 
-users # user data as stored in a numpy array
+files = ['data/songwise/okazaki_SongWise.csv','data/songwise/akira_SongWise.csv', 'data/songwise/satoru_SongWise.csv']
+
+users = ['','',''] 
+# user data as stored in a numpy array
 
 # read data from csv
+# converts files to numpy arrays 
+
 def read_data(files):
     
-    # converts files to numpy arrays 
+    for i in range(len(files)):
+        users[i] = np.array(np.genfromtxt(files[i], delimiter=','))
+    
+    songwise=np.array(users)
+   
+    
 
 def stylistic_aesthetic():
     
@@ -27,20 +37,15 @@ def stylistic():
     return stylsitic_output
 
 def to_csv(filename):
-
+    return
     #converts outputs ot csv and saves the filename
 
-if __name__ == '__main__':
-    for file in songwise:
-        files = list(file)
-    
-    read_data(files)
-    
-    output_1 = stylistic_aesthetic()
-    to_csv(output_1)
+read_data(files)
+    # output_1 = stylistic_aesthetic()
+    # to_csv(output_1)
 
-    output_2 = stylistic()
-    to_csv(output_1)
+    # output_2 = stylistic()
+    # to_csv(output_1)
     
-    output_3 = aesthetic()
-    to_csv(output_1)
+    # output_3 = aesthetic()
+    # to_csv(output_1)
