@@ -1,6 +1,7 @@
 from nltk import agreement
+from mpl_toolkits.mplot3d import Axes3D 
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 import csv
 
 
@@ -28,6 +29,21 @@ def displayAgreement(feature, rater1, rater2, rater3): # displays the kappa, fle
 	text_file.write("Scotts %s\n" % s)
 	text_file.close()
 
+def display3D(feature, rater1, rater2, rater3):
+	fig = plt.figure()
+	ax = fig.add_subplot(111, projection='3d')
+
+	n = 100
+
+	
+	ax.scatter(rater1, rater2, rater3)
+
+	ax.set_xlabel('Rater 1')
+	ax.set_ylabel('Rater 2')
+	ax.set_zlabel('Rater 3')
+
+	plt.savefig(str(feature)+'.pdf', dpi=300 )
+
 
 
 def calculateAgreement(rater1,rater2,rater3): # calulates kappa, fleiss, alpha and scotts scores for inter rater agreement
@@ -41,18 +57,19 @@ def calculateAgreement(rater1,rater2,rater3): # calulates kappa, fleiss, alpha a
 
 	return kappa, fless, alpha, scotts
 
-def main():
+def interRater():
 	#prepare vector
-	rater1 = toVector("Pat/familiarity.csv");
-	rater2 = toVector("Marino/familiarity.csv");
-	rater3 = toVector("Hideo/familiarity.csv");
+	rater1 = toVector("Pat/groovy.csv");
+	rater2 = toVector("Marino/groovy.csv");
+	rater3 = toVector("Hideo/groovy.csv");
 
 	print(rater1)
 	print(rater2)
 	print(rater3)
 
-	featureName = "familiarity"
+	featureName = "groovy"
 
-	displayAgreement(featureName, rater1, rater2, rater3)
+	display3D(featureName, rater1, rater2, rater3)
+	# displayAgreement(featureName, rater1, rater2, rater3)
 
-main()
+interRater()

@@ -1,6 +1,7 @@
 from nltk import agreement
 from mpl_toolkits.mplot3d import Axes3D 
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import csv
 
@@ -17,9 +18,17 @@ def read_data(files):
     for i in range(len(files)):
         users[i] = np.array(np.genfromtxt(files[i], delimiter=','))
     
-    songwise=np.array(users)
-   
+    for user in users:
+        user=pd.DataFrame(data=user[1:,1:])
     
+    print(user)
+
+    # for user in songwise:
+    #     for elements in user:
+    #         np.delete(user,(0), axis=0)
+    #         print(elements)
+    #     print('\n') 
+   
 
 def stylistic_aesthetic():
     
