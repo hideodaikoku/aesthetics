@@ -6,29 +6,26 @@ import matplotlib.pyplot as plt
 import csv
 
 files = ['data/songwise/okazaki_SongWise.csv','data/songwise/akira_SongWise.csv', 'data/songwise/satoru_SongWise.csv']
-
+files = ['data/preference/okazaki_SongComparison_1220.csv','data/preference/akira_SongComparison_1223.csv', 'data/preference/satoru_SongComparison_1219.csv']
+files = ['data/similarity/okazaki_SongComparison_1220.csv','data/similarity/akira_SongComparison_1223.csv', 'data/similarity/satoru_SongComparison_1219.csv']
 users = ['','',''] 
-# user data as stored in a numpy array
 
+# user data as stored in a numpy array
 # read data from csv
 # converts files to numpy arrays 
+# convert numpy array to dataframe
 
 def read_data(files):
     
     for i in range(len(files)):
-        users[i] = np.array(np.genfromtxt(files[i], delimiter=','))
-    
-    for user in users:
-        user=pd.DataFrame(data=user[1:,1:])
-    
-    print(user)
+        users[i] = pd.DataFrame(np.array(np.genfromtxt(files[i], delimiter=',')))
+        
+        # drop the first row of headers with NaN values
+        users[i]=users[i].drop([0], axis=0) 
+        
+        print(users[i])
 
-    # for user in songwise:
-    #     for elements in user:
-    #         np.delete(user,(0), axis=0)
-    #         print(elements)
-    #     print('\n') 
-   
+return users[i]
 
 def stylistic_aesthetic():
     
@@ -49,12 +46,6 @@ def to_csv(filename):
     return
     #converts outputs ot csv and saves the filename
 
-read_data(files)
-    # output_1 = stylistic_aesthetic()
-    # to_csv(output_1)
+def main()
+    readings = read_data(files)
 
-    # output_2 = stylistic()
-    # to_csv(output_1)
-    
-    # output_3 = aesthetic()
-    # to_csv(output_1)
