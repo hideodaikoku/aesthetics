@@ -6,10 +6,11 @@ import matplotlib.pyplot as plt
 import csv
 import os
 import errno
+from scipy.stats import pearsonr
 
-files = ['data/songwise/okazaki_SongWise.csv','data/songwise/akira_SongWise.csv', 'data/songwise/satoru_SongWise.csv']
+# files = ['data/songwise/okazaki_SongWise.csv','data/songwise/akira_SongWise.csv', 'data/songwise/satoru_SongWise.csv']
 # files = ['data/preference/okazaki_SongComparison_1220.csv','data/preference/akira_SongComparison_1223.csv', 'data/preference/satoru_SongComparison_1219.csv']
-# files = ['data/similarity/okazaki_SongComparison_1220.csv','data/similarity/akira_SongComparison_1223.csv', 'data/similarity/satoru_SongComparison_1219.csv']
+files = ['data/similarity/okazaki_SongComparison_1220.csv','data/similarity/akira_SongComparison_1223.csv', 'data/similarity/satoru_SongComparison_1219.csv']
 
 # file = 'data/similarity/satoru_SongComparison_1219.csv'
 # file = 'data/preference/satoru_SongComparison_1219.csv'
@@ -84,7 +85,25 @@ def feature_wise(files):
     plt.title('Average Feature Correlation',fontsize=16) 
     plt.show()
 
-    return users              
+    return users
+
+def sort(files):
+    sorter =[]
+    for i in range(len(files)):
+        df = pd.read_csv(files[i], dtype=np.float64)
+        users.append(df)
+        users[i]= users[i].drop(['Row'],axis=1)
+        for col in df:
+            sorter.append(df[col].values)
+        # snort.sort(reverse=True)
+        snort=[]
+        sorter= sorter[1:20]
+        for item in sorter:
+            for element in item:
+                snort.append(element)
+        print("User ", i)
+        print(snort)
+    return 
 
 def preference(files):
     for i in range(len(files)):
@@ -108,17 +127,17 @@ def preference(files):
     plt.title('Average User Preference Ratings',fontsize=16)
     plt.show()
 
-    # filename = "output/preference.csv"
-    # if not os.path.exists(os.path.dirname(filename)):
-    #     try:
-    #         os.makedirs(os.path.dirname(filename))
-    #     except OSError as exc: # Guard against race condition
-    #         if exc.errno != errno.EEXIST:
-    #             raise
+    filename = "output/preference.csv"
+    if not os.path.exists(os.path.dirname(filename)):
+        try:
+            os.makedirs(os.path.dirname(filename))
+        except OSError as exc: # Guard against race condition
+            if exc.errno != errno.EEXIST:
+                raise
 
-    # f= open(filename,"w+")
-    # df_mean.to_csv(path_or_buf=filename)    
-    # f.close()
+    f= open(filename,"w+")
+    df_mean.to_csv(path_or_buf=filename)    
+    f.close()
     
     return users
 
@@ -136,34 +155,35 @@ def similarity(files):
     df_mean.index=['Central Africa', 'Bali','Java','Korea','Spain','Japan','Cuba','Central Asia', 'Central America','Australia','Brazil','Jazz', 'Ballad','Bulgaria','South India','China','Europe','Chamber Music','North India','Boston']
     df_mean= df_mean.round(2)
     
-    plt.figure(figsize = (10,6))
+    plt.figure(figsize = (12,6))
     mask = np.zeros_like(df_mean)
     mask[np.triu_indices_from(mask)] = True
     with sn.axes_style("white"):
         sn.heatmap(df_mean, annot=True, mask=mask, vmin=0, vmax=100, cmap="YlGnBu",square=False)
     
-    plt.xticks(rotation=45, fontsize=6, ha='right')
+    plt.xticks(rotation=45, fontsize=4, ha='right')
     plt.yticks(fontsize=6,va='center')
 
     plt.title('Average User Similarity Ratings',fontsize=16)
     plt.show()
-
-    # filename = "output/similarity.csv"
     
-    # if not os.path.exists(os.path.dirname(filename)):
-    #     try:
-    #         os.makedirs(os.path.dirname(filename))
-    #     except OSError as exc: # Guard against race condition
-    #         if exc.errno != errno.EEXIST:
-    #             raise
+    filename = "output/similarity.csv"
+    
+    if not os.path.exists(os.path.dirname(filename)):
+        try:
+            os.makedirs(os.path.dirname(filename))
+        except OSError as exc: # Guard against race condition
+            if exc.errno != errno.EEXIST:
+                raise
 
-    # f= open(filename,"w+")
-    # df_mean.to_csv(path_or_buf=filename)    
-    # f.close()
+    f= open(filename,"w+")
+    df_mean.to_csv(path_or_buf=filename)    
+    f.close()
 
     return users
 
 # format(file)
 # similarity(files)
 # preference(files)
-feature_wise(files)
+# feature_wise(files)
+sort(files)
