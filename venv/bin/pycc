@@ -1,0 +1,3 @@
+#!/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics/venv/bin/python
+from numba.pycc import main
+main()
