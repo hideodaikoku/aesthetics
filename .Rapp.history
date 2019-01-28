@@ -1,0 +1,81 @@
+install.packages('cmdscale')
+getwd
+gertwd()
+getwd()
+setwd('/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics')
+read.csv('output/preferences.csv',header=FALSE,sep=',')
+read.csv('output/preference.csv',header=FALSE,sep=',')
+read.csv('output/preference.csv',header=FALSE,sep=',')
+read.csv('output/preference.csv',header=TRUE,sep=',')
+read.csv('output/preference.csv',header=TRUE,sep=',')
+df <- read.csv('output/preference.csv',header=TRUE,sep=',')
+df
+fit <- cmdscale(fit, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
+fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
+df <- read.csv('output/preference.csv',header=TRUE,sep=',')
+df
+df <- read.csv('output/preference.csv',header=FALSE,sep=',')
+df
+fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
+fit
+x <- fit$points[,1]
+x <- fit.points[,1]
+x <- fit(points[,1])
+x <- fit[,1]
+y <- fit[,2]
+plot(x,y)
+df <- read.csv('output/similarity.csv',header=FALSE,sep=',')
+fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
+x <- fit[,1]
+y <- fit[,2]
+plot(x,y)
+song.names <- c('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20')
+plot(x,y,labels=song,names)
+plot(x,y,labels=song.names)
+plot(x,y)
+text(x,y, pos=4, labels=song.names)
+plot(x,y,pch=19)
+text(x,y, pos=4, labels=song.names)
+text(x,y, pos=5, labels=song.names)
+text(x,y, pos=1, labels=song.names)
+text(x,y, pos=2, labels=song.names)
+text(x,y, pos=3, labels=song.names)
+plot(x,y,pch=19,color='blue')
+plot(x,y,pch=19,color=blue)
+plot(x,y,pch=19,col=blue)
+plot(x,y,pch=19,col='blue')
+text(x,y, pos=3, labels=song.name, size=8)
+text(x,y, pos=3, labels=song.names, size=8)
+text(x,y, pos=3, labels=song.names, offset=0.5)
+plot(x,y,pch=19,col='blue')
+text(x,y, pos=4, labels=song.names, offset=0.5)
+> setwd('/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics')#
+> df <- read.csv('output/similarity.csv',header=FALSE,sep=',')#
+> fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)#
+> x <- fit[,1]#
+> y <- fit[,2]#
+> plot(x,y,pch=19,col='blue')#
+> text(x,y, pos=4, labels=song.names, offset=0.5)
+setwd('/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics')
+df <- read.csv('output/similarity.csv',header=FALSE,sep=',')
+fit <- cmdscale(df, k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
+x <- fit[,1]
+fit
+fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
+fit
+x <-fit[,1]
+y <- fit[,2]
+plot(x,y,pch=19,col='blue')
+text(x,y, pos=4, labels=song.names, offset=0.5)
+title(main = 'Average Similarity Rating', sub = 'Multi Dimensional Scaling Plot', xlab = NULL, ylab = NULL,#
+      line = NA, outer = FALSE, ...)
+title(main = 'Average Similarity Rating', sub = 'Multi Dimensional Scaling Plot', xlab = NULL, ylab = NULL,#
+      line = NA, outer = FALSE)
+plot(x,y,pch=19,col='blue')
+text(x,y, pos=4, labels=song.names, offset=0.5)
+title(main = 'Average Similarity Rating', sub = FALSE, xlab = NULL, ylab = NULL,#
+      line = NA, outer = FALSE)
+plot(x,y,pch=19,col='blue')
+text(x,y, pos=4, labels=song.names, offset=0.5)
+title(main = 'Average Similarity Rating', sub = NULL, xlab = NULL, ylab = NULL,#
+      line = NA, outer = FALSE)

@@ -4,6 +4,7 @@ import numpy as np
 import pandas as pd
 import librosa.display
 import matplotlib.style as ms
+from scipy.spatial import distance
 import scipy
 ms.use('seaborn-muted')
 from IPython.display import Audio
@@ -60,7 +61,39 @@ def chroma(y2, sr2):
     df3.to_csv('Chroma/'+str(filename)+'.csv')
 
 def main():
+    #iterate through all files in the directory  
     for i in range(1,21):
-        compute(i)
+        compute(i)      
+# main()
 
-main()
+def mfcc_similarity():
+    dist=[]
+    spat=[]
+    key=[]
+        #for i in range(1,21):
+        #files.append("MFCC/"+str(i)+".csv")
+    for i in range(1,21):
+        df=pd.read_csv('MFCC/'+str(i)+'.csv').drop(['A'],axis=1)
+        for j in range(1,i):
+            df2=pd.read_csv('MFCC/'+str(j)+'.csv').drop(['A'],axis=1)
+            df=np.linalg.norm(np.array(df))
+            df2=np.linalg.norm(np.array(df2))
+            dist.append(min(df,df2)/max(df,df2))
+                
+    for i in range(len(dist)):
+            dist[i]=dist[i]*100
+    np.savetxt("distances.csv",dist,delimiter=',')
+#     df=np.linalg.norm(np.array(df))
+#     df2=np.linalg.norm(np.array(df2))
+#     answer=distance.cdist(df,df2,metric='euclidean')
+#     print(min(df,df2)/max(df,df2))
+#     for i  in range(1,21):
+#         df=pd.read_csv('MFCC/'+str(i)+'.csv').drop(['A'],axis=1)
+#         for j in range(1, 21):
+#                 df2=pd.read_csv('MFCC/'+str(files[j])+'.csv').drop(['A'],axis=1)
+#                 dist.append(distance.cdist(df,df2,metric='euclidean'))
+    
+#     print(distance.cdist(files_1,files_2, 'euclidean'))
+    #for i in range(len(files)):
+
+mfcc_similarity()
