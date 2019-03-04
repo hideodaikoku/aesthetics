@@ -28,7 +28,6 @@ A cross cultural study of perceptual features analysis of World Music.
 │   ├── preference
 │   │   ├── akira_SongComparison_1223.csv
 │   │   ├── okazaki_SongComparison_1220.csv
-│   │   ├── pref.csv
 │   │   └── satoru_SongComparison_1219.csv
 │   ├── similarity
 │   │   ├── akira_SongComparison_1223.csv
@@ -40,13 +39,10 @@ A cross cultural study of perceptual features analysis of World Music.
 │       └── satoru_SongWise.csv
 ├── requirements.txt
 └── scripts
-    ├── R_MDS.r --> Multi-Dimensional Scaling Plot for Similarity
-    ├── agreement.py
-    ├── compare.py --> Similarity Comparision
-    ├── full-similarity.py --> Feature Extraction
-    ├── icc.r --> Inter Class Coefficient (Rater Reliablity) for Features
-    ├── interrater.py
-    ├── preference.py
-    ├── scratch2.r  --> Inter Class Coeffciient for Similarity Scores
-    └── sorting.py --> Data Sorting
+    ├── R_MDS.r
+    ├── compare.py
+    ├── full-similarity.py
+    ├── icc.r
+    ├── scratch2.r
+    └── sorting.py
 ```
