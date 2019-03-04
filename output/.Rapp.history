@@ -1,0 +1,365 @@
+nstall.packages('cmdscale')
+library('cmdscale')
+install.packagees('cmdscale')
+install.packages('cmdscale')
+setwd('/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics')
+df <- read.csv('output/similarity.csv', header=FALSE, sep=',')
+df <- read.csv('output/ssimilarity_normalized', header=FALSE, sep=',')
+df <- read.csv('output/similarity_normalized', header=FALSE, sep=',')
+df <- read.csv('/Users/hideodaikoku/Documents/Comp Muisc/Experiment/cross-cultural-aesthetics/output/similarity_normalized', header=FALSE, sep=',')
+df <- read.csv('/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics/output/similarity_normalized', header=FALSE, sep=',')
+df <- read.csv('/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics/output/similarity_normalized.csv', header=FALSE, sep=',')
+fit <- cmdscale(df, k=2, eig=FALSE, add = FALSE, x.ret=FALSE)
+x <- fit[,1]
+y <- fit[,2]
+col <- c("#EEF5FD","#7ED44F","#EFBA40","#EB3F25","#B35083","#5B5B5B","#337874","#E588B7","#4E2693")
+plot(x,y,pch=19,col=col)
+col <- c("#EEF5FD","#7ED44F","#7ED44F","#EFBA40","#EB3F25","#EB3F25","#EB3F25","#B35083","#B35083","#B35083","#5B5B5B","#5B5B5B","#5B5B5B","#337874","#337874","#E588B7","#E588B7","#4E2693")
+plot(x,y,pch=19,col=col)
+len(col)
+length(col)
+col <- c("#EEF5FD","#7ED44F","#7ED44F","#EFBA40","#EB3F25","#EB3F25","#EB3F25","#B35083","#B35083","#B35083","#5B5B5B","#5B5B5B","#5B5B5B","#337874","#337874","#E588B7","#E588B7",#DE69A4,#DE69A4,"#4E2693")
+;
+col <- c("#EEF5FD","#7ED44F","#7ED44F","#EFBA40","#EB3F25","#EB3F25","#EB3F25","#B35083","#B35083","#B35083","#5B5B5B","#5B5B5B","#5B5B5B","#337874","#337874","#E588B7","#E588B7","#DE69A4","#DE69A4","#4E2693")
+plot(x,y,pch=19,col=col)
+col<-(#49A5F8,#7FD450,#7FD450,#EFBB41,#EB3B24,#EB3B24,#EB3B24,#B34F83,#B34F83,#B34F83,#717171,#717171,#717171,#337874,#337874,#8C275B,#8C275B,#E174AB,#E174AB,#4C2491)
+a
+a;
+col<-("#49A5F8","#7FD450","#7FD450","#EFBB41","#EB3B24","#EB3B24","#EB3B24","#B34F83","#B34F83","#B34F83","#717171","#717171","#717171","#337874","#337874","#8C275B","#8C275B","#E174AB","#E174AB","#4C2491")
+col<-(‘#49A5F8’,’#7FD450’,’#7FD450’,’#EFBB41’,’#EB3B24’,’#EB3B24’,’#EB3B24’,’#B34F83’,’#B34F83’,’#B34F83’,’#717171’,’#717171’,’#717171’,’#337874’,’#337874’,’#8C275B’,’#8C275B’,’#E174AB’,’#E174AB’,’#4C2491’)
+col<-c("#49A5F8","#7FD450","#7FD450","#EFBB41","#EB3B24","#EB3B24","#EB3B24","#B34F83","#B34F83","#B34F83","#717171","#717171","#717171","#337874","#337874","#8C275B","#8C275B","#E174AB","#E174AB","#4C2491")
+plot(x,y,pch=19,col=col)
+plot(x,y,pch=19,col=col)
+title(main = 'Average Similarity Rating', sub = NULL, xlab = NULL, ylab = NULL,line = NA, outer = FALSE)
+text(x,y, pos=4, labels=c("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20"), offset=0.5)
+text(x,y, pos=4, labels=c("","2","3","","","6","","","","","11","","","","15","","17","18","","20"), offset=0.5)
+plot(x,y,pch=19,col=col)
+text(x,y, pos=4, labels=c("","2","3","","","6","","","","","11","","","","15","","17","18","","20"), offset=0.5)
+plot(x,y,pch=19,col=col)
+text(x,y, pos=4, labels=c("","2","3","","","6","","","","","11","","","","15","16","17","18","","20"), offset=0.5)
+title(main = 'Average Similarity Rating', sub = NULL, xlab = NULL, ylab = NULL,line = NA, outer = FALSE)
+setwd('Users/hideodaikoku/')
+setwd('/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics/perceptual-ratings/preference')
+df1<- read.csv('akira_SongComparison_1223.csv',header=FALSE)
+df2<- read.csv('okazaki_SongComparison_1220.csv',header=FALSE)
+df3<- read.csv('satoru_SongComparison_1219.csv',header=FALSE)
+df<-rbind(df1,df2,df3)
+df
+df<-cbind(df1,df2,df3)
+df<-cbind(df1,df2,df3)
+df<-merge(df1,df2,df3)
+ibrary(dplyr)
+df <- cbind(df1,df2,df3)
+df
+df[-c(1),]
+df <- cbind(df1,df2,df3)
+df <- select(df,-c("V1"))
+library(dplyr)
+df <- select(df,-c("V1"))
+df <- cbind(df1,df2,df3)
+df <- select(df,-c("V1"))
+df2 <- select(df,-c("V1"))
+df2 <- select[df,-c("V1")]
+df <- df[-c('V1')]
+df <- subset(df,select=c('V1'))
+df
+df <- cbind(df1,df2,df3)
+df <- subset(df,select=-c('V1'))
+cols <- paste("V",1:63,sep="")
+df.colnames<-cols
+df
+cols
+colnames(df)<-cols
+df
+df <- subset(df,select=-c('V1','V22','V43'))
+library(dplyr)
+select(df, -c("V1","V22","V43"))
+df<-df[-c(1),]
+df
+rownames<-c("1","2","3","4","5","6","7","8","9","11","10","11","12","13","14","15","16","17","18","19","20")
+(setattr(df,"row.names",rownames))
+library(data.table)
+(setattr(df,"row.names",rownames))
+df <- cbind(df1,df2,df3)
+cols <- paste("V",1:63,sep="")
+df
+cols <- paste("V",1:63,sep="")
+colnames(df)<-cols
+df
+df<-df[-c(1),]
+df
+select(df, -c("V1","V22","V43"))
+colnames(df)<-cols
+df
+df <- cbind(df1,df2,df3)
+df <- subset(df,select=-c('V1'))
+df <- cbind(df1,df2,df3)
+df
+row <- paste("V", 1:63, sep="")
+df <- subset(df,select=-c('V1'))
+colnames(df) <- row
+df
+df <- select(df, -c("V1","V22","V43"))
+df
+df<-df[-c(1),]
+df
+row <- paste("V",1:60,sep="")
+colnames(df)<-row
+df
+df
+focus <- df[,c("V1","V21")]
+focuse
+focus
+library(irr)
+focus<-data.matrix(focus)
+icc(focus,model-"twoway",type="agreement")
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V21","V41")]
+focus<-data.matrix(focus)
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V41","V1")]
+focus<-data.matrix(focus)
+focus <- df[,c("V41","V1")]
+focus<-data.matrix(focus)
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V2","V22")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V22","V42")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V42","V2")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V2","V22")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V22","V42")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V42","V2")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V4","V24")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V24","V44")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V44","V4")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V5","V25")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V25","V45")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V45","V5")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V6","V26")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V26","V46")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V46","V6")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V7","V27")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V27","V47")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V47","V7")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V8","V28")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V28","V48")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V48","V8")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V9","V29")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V29","V49")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V49","V9")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V10","V31")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V31","V49")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V49","V10")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V10","V30")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V30","V50")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V50","V10")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V11","V31")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V31","V51")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V51","V11")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V12","V32")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V32","V52")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V52","V12")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V13","V33")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V33","V53")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V53","V13")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V14","V34")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V34","V54")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V54","V14")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V15","V35")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V35","V55")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V55","V15")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V16","V36")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V36","V56")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V56","V16")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+V57
+focus <- df[,c("V17","V37")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V37","V57")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V57","V17")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V18","V38")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V38","V58")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V58","V18")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+focus <- df[,c("V19","V39")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V39","V59")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V59","V19")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+V60
+focus <- df[,c("V20","V40")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V40","V60")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")#
+#
+focus <- df[,c("V60","V20")]#
+focus<-data.matrix(focus)#
+icc(focus,model="twoway",type="agreement")
+df
+write.csv(df,file=)
+write.csv(df,file='pref.csv')
+setwd('~/Documents/Comp Music/Experiment/cross-cultural-aesthertics/output')
+setwd('~/Documents/Comp Music/Experiment/cross-cultural-aesthetics/output')
+df->read.csv('similarity_normalized.csv', header=FALSE)
+df<-read.csv('similarity_normalized.csv', header=FALSE)
+df
+library('cmdscale')
+install.packages('cmdscale')
+fit<-cmdscale(df,k=2,eig=FALSE,add=FALSE,x.ret=FALSE)
+x<- fit[,1]
+y<- fit[,2]
+col<-c("#49A5F8","#7FD450","#7FD450","#EFBB41","#EB3B24","#EB3B24","#EB3B24","#B34F83","#B34F83","#B34F83","#717171","#717171","#717171","#337874","#337874","#8C275B","#8C275B","#E174AB","#E174AB","#4C2491")
+plot(x,y,pch=19,col=col)
+text(x,y, pos=4, labels=song.names, offset=0.5)
+song.names <- c("1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20")
+text(x,y, pos=4, labels=song.names, offset=0.5)
+title(main = 'Average Similarity Rating', sub = NULL, xlab = NULL, ylab = NULL,line = NA, outer = FALSE)

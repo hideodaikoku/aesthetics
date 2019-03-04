@@ -1,81 +1,506 @@
-install.packages('cmdscale')
+if(!require(devtools)) install.packages("devtools")
+ls
+devtools::install_github("kassambara/ggpubr")
+library("ggpubr")
+install.packages("ggpubr")
+library("ggpubr")
+x <- c(1,2,3,4,5,6,7,8)
+y <- c(3,2,5,6,7,1,2,1)
+cor(x,y, method = c("pearson","kendall",))
+cor(x,y, method = c("pearson","kendall","speeareman"))
+cor(x,y, method = c("pearson","kendall","spearman"))
+cor.test(x,y, method=c("pearson","kendall,"spearman"))
+cor.test(x,y, method="pearson")
+setwd('~/Documents/Comp Music/Experiment')
 getwd
-gertwd()
 getwd()
-setwd('/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics')
-read.csv('output/preferences.csv',header=FALSE,sep=',')
-read.csv('output/preference.csv',header=FALSE,sep=',')
-read.csv('output/preference.csv',header=FALSE,sep=',')
-read.csv('output/preference.csv',header=TRUE,sep=',')
-read.csv('output/preference.csv',header=TRUE,sep=',')
-df <- read.csv('output/preference.csv',header=TRUE,sep=',')
+setwd('/cross-cultural-aesthetics')
+setwd('~/cross-cultural-aesthetics')
+setwd('~Documents/Comp Music/Experiment/cross-cultural-aesthetics')
+setwd('~/Documents/Comp Music/Experiment/cross-cultural-aesthetics')
+df <- read.csv('/output/similarity.csv')
+df <- read.csv('output/similarity.csv')
 df
-fit <- cmdscale(fit, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
-fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
-df <- read.csv('output/preference.csv',header=TRUE,sep=',')
 df
-df <- read.csv('output/preference.csv',header=FALSE,sep=',')
+df <- read.csv('output/similarity.csv', header=FALSE)
 df
-fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
-fit
-x <- fit$points[,1]
-x <- fit.points[,1]
-x <- fit(points[,1])
-x <- fit[,1]
-y <- fit[,2]
-plot(x,y)
-df <- read.csv('output/similarity.csv',header=FALSE,sep=',')
-fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
-x <- fit[,1]
-y <- fit[,2]
-plot(x,y)
-song.names <- c('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20')
-plot(x,y,labels=song,names)
-plot(x,y,labels=song.names)
-plot(x,y)
-text(x,y, pos=4, labels=song.names)
-plot(x,y,pch=19)
-text(x,y, pos=4, labels=song.names)
-text(x,y, pos=5, labels=song.names)
-text(x,y, pos=1, labels=song.names)
-text(x,y, pos=2, labels=song.names)
-text(x,y, pos=3, labels=song.names)
-plot(x,y,pch=19,color='blue')
-plot(x,y,pch=19,color=blue)
-plot(x,y,pch=19,col=blue)
-plot(x,y,pch=19,col='blue')
-text(x,y, pos=3, labels=song.name, size=8)
-text(x,y, pos=3, labels=song.names, size=8)
-text(x,y, pos=3, labels=song.names, offset=0.5)
-plot(x,y,pch=19,col='blue')
-text(x,y, pos=4, labels=song.names, offset=0.5)
-> setwd('/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics')#
-> df <- read.csv('output/similarity.csv',header=FALSE,sep=',')#
-> fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)#
-> x <- fit[,1]#
-> y <- fit[,2]#
-> plot(x,y,pch=19,col='blue')#
-> text(x,y, pos=4, labels=song.names, offset=0.5)
-setwd('/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics')
-df <- read.csv('output/similarity.csv',header=FALSE,sep=',')
-fit <- cmdscale(df, k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
-x <- fit[,1]
-fit
-fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
-fit
-x <-fit[,1]
-y <- fit[,2]
-plot(x,y,pch=19,col='blue')
-text(x,y, pos=4, labels=song.names, offset=0.5)
-title(main = 'Average Similarity Rating', sub = 'Multi Dimensional Scaling Plot', xlab = NULL, ylab = NULL,#
-      line = NA, outer = FALSE, ...)
-title(main = 'Average Similarity Rating', sub = 'Multi Dimensional Scaling Plot', xlab = NULL, ylab = NULL,#
-      line = NA, outer = FALSE)
-plot(x,y,pch=19,col='blue')
-text(x,y, pos=4, labels=song.names, offset=0.5)
-title(main = 'Average Similarity Rating', sub = FALSE, xlab = NULL, ylab = NULL,#
-      line = NA, outer = FALSE)
-plot(x,y,pch=19,col='blue')
-text(x,y, pos=4, labels=song.names, offset=0.5)
-title(main = 'Average Similarity Rating', sub = NULL, xlab = NULL, ylab = NULL,#
-      line = NA, outer = FALSE)
+library("ggpubr")
+df <- read.csv('output/songwise-average.csv')
+df <- read.csv('output/songwise_average.csv')
+df
+ggscatter(df, x='consonance', y=)
+df <- read.csv('output/songwise_avg.csv')
+df
+ggscatter(df, x='consonance', y='liking')
+add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, co
+ggscatter(df, x='consonance', y='liking', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='valence', y='liking', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='familiarity', y='liking', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='grooviness', y='timbre', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='grooviness', y='liking', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='familiarity', y='consonance', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='consonance', y='timbre', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='grooviness', y='rhythm', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='grooviness', y='rhythmic', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='consonance', y='valence', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='familiarity', y='sound_quality', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='excitement', y='tempo', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='valence', y='timbre', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='pitch', y='sound_quality', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='valence', y='grooviness', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='consonance', y='familiarity', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='valence', y='timbre', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='texture', y='ornamentation', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='consonance', y='pitch', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+ggscatter(df, x='valence', y='ornamentation', add = "reg.line", conf.int = TRUE, #
+          cor.coef = TRUE, cor.method = "pearson")
+df
+df2 <- df('texture','consonance')
+df2 <- df[,c('texture','consonance')]
+df2
+df1 <- read.csv('sogwise_0.csv',header=FALSE)
+df1 <- read.csv('./output/songwise_0.csv',header=FALSE)
+df2 <- read.csv('./output/songwise_1.csv',header=FALSE)
+df3 <- read.csv('./output/songwise_2.csv',header=FALSE)
+df <- merge(df1,df2, sort=FALSE)
+df
+df1
+df <- rbind(df1,df2)
+df
+df <- rbind(df1,df2)
+col <- paste("V",2:14,sep="")
+col
+df <- df[col]
+df
+df
+df <- cbind(df1,df2)
+df
+col <- paste("V",1:30,sep="")
+colnames(df) <- col
+col <- paste("V",1:28,sep="")
+colnames(df) <- col
+df
+library(dplyr)
+import.packages('dplyr')
+install.packages('dplyr')
+library(dplyr)
+select(df, -c("V1","V15"))
+col <- paste("V",1:26,sep="")
+colnames(df) <- col
+df
+df<-select(df, -c("V1","V15"))
+col <- paste("V",1:28,sep="")
+colnames(df) <- col
+df<-select(df, -c("V1","V15"))
+col <- paste("V",1:26,sep="")
+colnames(df) <- col
+df
+df <- cbind(df,df3)
+df
+col <- paste("V",1:40,sep="")
+colnames(df) <- col
+df
+df <- select(df,-c("V27"))
+df
+col <- paste("V",1:39,sep="")
+colnames(df) <- col
+df
+texture <- df[,c("V1","V14","V27")]
+texture
+df1<- read.csv("okazaki_SongWise.csv",header=FALSE)
+df1<- read.csv("./perceptual_ratings/okazaki_SongWise.csv",header=FALSE)
+df1<- read.csv("./perceptual-ratings/songwise/okazaki_SongWise.csv",header=FALSE)
+df1
+df2<- read.csv("./perceptual-ratings/songwise/akira_SongWise.csv",header=FALSE)
+df2<- read.csv("./perceptual-ratings/songwise/satoru_SongWise.csv",header=FALSE)
+df3<- read.csv("./perceptual-ratings/songwise/akira_SongWise.csv",header=FALSE)
+df <- cbind(df1,df2,df3)
+df
+colnames <- paste("V",1:42,sep="")
+col <- paste("V",1:42,sep="")
+colnames(df)<- col
+col <- paste("V",1:39,sep="")
+colnames(df)<- col
+df
+df
+texture<- df[,c("V1","V14","V27")]
+texture
+texture[-c(1)]
+texture[-r(1)]
+texture[-c(1),]
+texture<-texture[-c(1),]
+texture
+library(data.table)
+install.packages('data.table')
+library(data.table)
+rows <-c(1:20)
+(setattr(texture, "row.names", rows)
+)
+library(icc)
+install.packages('icc')
+install.packages('ICC')
+install.packages('irr')
+libarary('irr')
+library('irr')
+icc(texture, odel="twoway", type="agreement")
+icc(texture, model="twoway", type="agreement")
+icc(texture, model="twoway", type="agreement",unit="average")
+icc(texture, model="oneway", type="agreement",unit="average")
+icc(texture, model="oneway", type="consistency",unit="average")
+texture<-texturee[df,c(1,2)]
+texture<-texture[df,c(1,2)]
+texture<-texture[df,c("V1","V2")]
+texture
+texture<-texture[df,c("V1","V14")]
+texture<-texture[,c("V1","V14")]
+texture
+kappa2(texture, "squared")
+kappa2(texture, "unweighted")
+kappa2(texture, "qual")
+kappa2(texture, "equal")
+texture<- df[,c("V14","V27")]
+texture
+texture[-c(1),]
+(setattr(texture, "row.names", rows)
+)
+texture<-texture[-c(1),]
+(setattr(texture, "row.names", rows)
+)
+kappa2(texture,"squared")
+texture<- df[,c("V1","V27")]
+texture<-texture[-c(1),]
+(setattr(texture, "row.names", rows))
+kappa2(texture,"squared")
+df
+consonance<- df[,c("V2","V15")]
+consonance<-consonance[-c(1),]
+(setattr(consonance, "row.names", rows))
+kappa2(consonance,"squared")
+consonance<- df[,c("V2","V28")]
+consonance<-consonance[-c(1),]
+(setattr(consonance, "row.names", rows))
+kappa2(consonance,"squared")
+consonance<- df[,c("V2","V28")]
+consonance<-consonance[-c(1),]
+(setattr(consonance, "row.names", rows))
+kappa2(consonance,"squared")
+icc(consonance, model="oneway", type='consistency',unit=)
+icc(consonance, model="oneway", type='consistency',unit=)
+icc(consonance, model="oneway", type='consistency',unit='average')
+warnings()
+data.matrix(texture)
+icc(texture, model="oneway", type='consistency',unit='average')
+warnings()
+texture<-data.matrix(texture)
+icc(texture, model="oneway", type='consistency',unit='average')
+icc(texture, model="oneway", type='agreemnent',unit='average')
+icc(texture, model="twoway", type='agreemnent',unit='average')
+icc(texture, model="twoway", type='agreement',unit='average')
+icc(texture, model="twoway", type='agreement',unit='single')
+icc(texture, model="twoway", type='agreement')
+df
+texture<- df[,c("V1","V14")]#
+texture<-texture[-c(1),]#
+texture<-data.matrix(texture)#
+(setattr(texture,"row.names",rows))#
+icc(texture,model="twoway",type"agreement")
+texture<- df[,c("V1","V14")]#
+texture<-texture[-c(1),]#
+texture<-data.matrix(texture)#
+(setattr(texture,"row.names",rows))#
+icc(texture,model="twoway",type="agreement")
+texture<- df[,c("V14","V28")]#
+texture<-texture[-c(1),]#
+texture<-data.matrix(texture)#
+(setattr(texture,"row.names",rows))#
+icc(texture,model="twoway",type="agreement")
+texture<- df[,c("V1","V28")#
+texture<-texture[-c(1),]#
+texture<-data.matrix(texture)#
+(setattr(texture,"row.names",rows))#
+icc(texture,model="twoway",type="agreement")
+texture<- df[,c("V1","V28")]#
+texture<-texture[-c(1),]#
+texture<-data.matrix(texture)#
+(setattr(texture,"row.names",rows))#
+icc(texture,model="twoway",type="agreement")
+consonance<- df[,c("V2","V15")]#
+consonance<-consonance[-c(1),]#
+consonance<-data.matrix(consonance)#
+(setattr(consonance,"row.names",rows))#
+icc(consonance,model="twoway",type="agreement")
+consonance<- df[,c("V15","V29")]#
+consonance<-consonance[-c(1),]#
+consonance<-data.matrix(consonance)#
+(setattr(consonance,"row.names",rows))#
+icc(consonance,model="twoway",type="agreement")
+consonance<- df[,c("V2","V29")]#
+consonance<-consonance[-c(1),]#
+consonance<-data.matrix(consonance)#
+(setattr(consonance,"row.names",rows))#
+icc(consonance,model="twoway",type="agreement")
+clear()
+clear
+texture<- df[,c("V1","V14")]#
+texture<-texture[-c(1),]#
+texture<-data.matrix(texture)#
+(setattr(texture,"row.names",rows))#
+icc(texture,model="twoway",type="agreement")#
+#
+texture<- df[,c("V14","V27")]#
+texture<-texture[-c(1),]#
+texture<-data.matrix(texture)#
+(setattr(texture,"row.names",rows))#
+icc(texture,model="twoway",type="agreement")#
+#
+texture<- df[,c("V1","V27")]#
+texture<-texture[-c(1),]#
+texture<-data.matrix(texture)#
+(setattr(texture,"row.names",rows))#
+icc(texture,model="twoway",type="agreement")
+df
+consonance<- df[,c("V2","V15")]#
+consonance<-consonance[-c(1),]#
+consonance<-data.matrix(consonance)#
+(setattr(consonance,"row.names",rows))#
+icc(consonance,model="twoway",type="agreement")#
+#
+consonance<- df[,c("V15","V28")]#
+consonance<-consonance[-c(1),]#
+consonance<-data.matrix(consonance)#
+(setattr(consonance,"row.names",rows))#
+icc(consonance,model="twoway",type="agreement")#
+#
+consonance<- df[,c("V2","V28")]#
+consonance<-consonance[-c(1),]#
+consonance<-data.matrix(consonance)#
+(setattr(consonance,"row.names",rows))#
+icc(consonance,model="twoway",type="agreement")
+df
+df
+rhythmic<- df[,c("V3","V16")]#
+rhythmic<-rhythmic[-c(1),]#
+rhythmic<-data.matrix(rhythmic)#
+(setattr(rhythmic,"row.names",rows))#
+icc(rhythmic,model="twoway",type="agreement")#
+#
+rhythmic<- df[,c("V16","V29")]#
+rhythmic<-rhythmic[-c(1),]#
+rhythmic<-data.matrix(rhythmic)#
+(setattr(rhythmic,"row.names",rows))#
+icc(rhythmic,model="twoway",type="agreement")#
+#
+rhythmic<- df[,c("V3","V29")]#
+rhythmic<-rhythmic[-c(1),]#
+rhythmic<-data.matrix(rhythmic)#
+(setattr(rhythmic,"row.names",rows))#
+icc(rhythmic,model="twoway",type="agreement")
+familiarity<- df[,c("familiarity","V17")]#
+familiarity<-familiarity[-c(1),]#
+familiarity<-data.matrix(familiarity)#
+(setattr(familiarity,"row.names",rows))#
+icc(familiarity,model="twoway",type="agreement")#
+#
+familiarity<- df[,c("V17","V30")]#
+familiarity<-familiarity[-c(1),]#
+familiarity<-data.matrix(familiarity)#
+(setattr(familiarity,"row.names",rows))#
+icc(familiarity,model="twoway",type="agreement")#
+#
+familiarity<- df[,c("V4","V30")]#
+familiarity<-familiarity[-c(1),]#
+familiarity<-data.matrix(familiarity)#
+(setattr(familiarity,"row.names",rows))#
+icc(familiarity,model="twoway",type="agreement")
+familiarity<- df[,c("V4","V17")]#
+familiarity<-familiarity[-c(1),]#
+familiarity<-data.matrix(familiarity)#
+(setattr(familiarity,"row.names",rows))#
+icc(familiarity,model="twoway",type="agreement")#
+#
+familiarity<- df[,c("V17","V30")]#
+familiarity<-familiarity[-c(1),]#
+familiarity<-data.matrix(familiarity)#
+(setattr(familiarity,"row.names",rows))#
+icc(familiarity,model="twoway",type="agreement")#
+#
+familiarity<- df[,c("V4","V30")]#
+familiarity<-familiarity[-c(1),]#
+familiarity<-data.matrix(familiarity)#
+(setattr(familiarity,"row.names",rows))#
+icc(familiarity,model="twoway",type="agreement")
+df
+valence<- df[,c("V5","V18")]#
+valence<-valence[-c(1),]#
+valence<-data.matrix(valence)#
+(setattr(valence,"row.names",rows))#
+icc(valence,model="twoway",type="agreement")#
+#
+valence<- df[,c("V18","V31")]#
+valence<-valence[-c(1),]#
+valence<-data.matrix(valence)#
+(setattr(valence,"row.names",rows))#
+icc(valence,model="twoway",type="agreement")#
+#
+valence<- df[,c("V5","V31")]#
+valence<-valence[-c(1),]#
+valence<-data.matrix(valence)#
+(setattr(valence,"row.names",rows))#
+icc(valence,model="twoway",type="agreement")
+df
+excitement<- df[,c("V6","V19")]#
+excitement<-excitement[-c(1),]#
+excitement<-data.matrix(excitement)#
+(setattr(excitement,"row.names",rows))#
+icc(excitement,model="twoway",type="agreement")#
+#
+excitement<- df[,c("V19","V32")]#
+excitement<-excitement[-c(1),]#
+excitement<-data.matrix(excitement)#
+(setattr(excitement,"row.names",rows))#
+icc(excitement,model="twoway",type="agreement")#
+#
+excitement<- df[,c("V6","V32")]#
+excitement<-excitement[-c(1),]#
+excitement<-data.matrix(excitement)#
+(setattr(excitement,"row.names",rows))#
+icc(excitement,model="twoway",type="agreement")
+liking<- df[,c("V7","V20")]#
+liking<-liking[-c(1),]#
+liking<-data.matrix(liking)#
+(setattr(liking,"row.names",rows))#
+icc(liking,model="twoway",type="agreement")#
+#
+liking<- df[,c("V20","V33")]#
+liking<-liking[-c(1),]#
+liking<-data.matrix(liking)#
+(setattr(liking,"row.names",rows))#
+icc(liking,model="twoway",type="agreement")#
+#
+liking<- df[,c("V7","V33")]#
+liking<-liking[-c(1),]#
+liking<-data.matrix(liking)#
+(setattr(liking,"row.names",rows))#
+icc(liking,model="twoway",type="agreement")
+ornamentation<- df[,c("V8","V21")]#
+ornamentation<-ornamentation[-c(1),]#
+ornamentation<-data.matrix(ornamentation)#
+(setattr(ornamentation,"row.names",rows))#
+icc(ornamentation,model="twoway",type="agreement")#
+#
+ornamentation<- df[,c("V21","V34")]#
+ornamentation<-ornamentation[-c(1),]#
+ornamentation<-data.matrix(ornamentation)#
+(setattr(ornamentation,"row.names",rows))#
+icc(ornamentation,model="twoway",type="agreement")#
+#
+ornamentation<- df[,c("V8","V34")]#
+ornamentation<-ornamentation[-c(1),]#
+ornamentation<-data.matrix(ornamentation)#
+(setattr(ornamentation,"row.names",rows))#
+icc(ornamentation,model="twoway",type="agreement")
+grooviness<- df[,c("V9","V22")]#
+grooviness<-grooviness[-c(1),]#
+grooviness<-data.matrix(grooviness)#
+(setattr(grooviness,"row.names",rows))#
+icc(grooviness,model="twoway",type="agreement")#
+#
+grooviness<- df[,c("V22","V35")]#
+grooviness<-grooviness[-c(1),]#
+grooviness<-data.matrix(grooviness)#
+(setattr(grooviness,"row.names",rows))#
+icc(grooviness,model="twoway",type="agreement")#
+#
+grooviness<- df[,c("V9","V35")]#
+grooviness<-grooviness[-c(1),]#
+grooviness<-data.matrix(grooviness)#
+(setattr(grooviness,"row.names",rows))#
+icc(grooviness,model="twoway",type="agreement")
+tempo<- df[,c("V10","V23")]#
+tempo<-tempo[-c(1),]#
+tempo<-data.matrix(tempo)#
+(setattr(tempo,"row.names",rows))#
+icc(tempo,model="twoway",type="agreement")#
+#
+tempo<- df[,c("V23","V36")]#
+tempo<-tempo[-c(1),]#
+tempo<-data.matrix(tempo)#
+(setattr(tempo,"row.names",rows))#
+icc(tempo,model="twoway",type="agreement")#
+#
+tempo<- df[,c("V10","V36")]#
+tempo<-tempo[-c(1),]#
+tempo<-data.matrix(tempo)#
+(setattr(tempo,"row.names",rows))#
+icc(tempo,model="twoway",type="agreement")
+pitch<- df[,c("V11","V24")]#
+pitch<-pitch[-c(1),]#
+pitch<-data.matrix(pitch)#
+(setattr(pitch,"row.names",rows))#
+icc(pitch,model="twoway",type="agreement")#
+#
+pitch<- df[,c("V24","V37")]#
+pitch<-pitch[-c(1),]#
+pitch<-data.matrix(pitch)#
+(setattr(pitch,"row.names",rows))#
+icc(pitch,model="twoway",type="agreement")#
+#
+pitch<- df[,c("V11","V37")]#
+pitch<-pitch[-c(1),]#
+pitch<-data.matrix(pitch)#
+(setattr(pitch,"row.names",rows))#
+icc(pitch,model="twoway",type="agreement")
+timbre<- df[,c("V12","V25")]#
+timbre<-timbre[-c(1),]#
+timbre<-data.matrix(timbre)#
+(setattr(timbre,"row.names",rows))#
+icc(timbre,model="twoway",type="agreement")#
+#
+timbre<- df[,c("V25","V38")]#
+timbre<-timbre[-c(1),]#
+timbre<-data.matrix(timbre)#
+(setattr(timbre,"row.names",rows))#
+icc(timbre,model="twoway",type="agreement")#
+#
+timbre<- df[,c("V12","V38")]#
+timbre<-timbre[-c(1),]#
+timbre<-data.matrix(timbre)#
+(setattr(timbre,"row.names",rows))#
+icc(timbre,model="twoway",type="agreement")
+sound_quality<- df[,c("V13","V26")]#
+sound_quality<-sound_quality[-c(1),]#
+sound_quality<-data.matrix(sound_quality)#
+(setattr(sound_quality,"row.names",rows))#
+icc(sound_quality,model="twoway",type="agreement")#
+#
+sound_quality<- df[,c("V26","V39")]#
+sound_quality<-sound_quality[-c(1),]#
+sound_quality<-data.matrix(sound_quality)#
+(setattr(sound_quality,"row.names",rows))#
+icc(sound_quality,model="twoway",type="agreement")#
+#
+sound_quality<- df[,c("V13","V39")]#
+sound_quality<-sound_quality[-c(1),]#
+sound_quality<-data.matrix(sound_quality)#
+(setattr(sound_quality,"row.names",rows))#
+icc(sound_quality,model="twoway",type="agreement")
