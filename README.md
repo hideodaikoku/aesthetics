@@ -1,6 +1,5 @@
 # cross-cultural-aesthetics
 A cross cultural study of perceptual features analysis of World Music. 
-# cross-cultural-aesthetics
 
 * Below is the tree structure of the repository. Please look at `/perceptual-ratings` for experiment data.
 * Audio files are under thee directory `/audio` as WAV file, normalized and cropped to 10s samples.
