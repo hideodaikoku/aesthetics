@@ -7,11 +7,11 @@ A cross cultural study of perceptual features analysis of World Music.
 
 
 `
-├── audio
-├── dsp-feature-extractions
-│   ├── chroma
-│   ├── mel
-│   └── mfcc
++ ── audio
++ ── dsp-feature-extractions
+│   +── chroma
+│   +── mel
+│   +── mfcc
 ├── feature-correlations
 │   ├── README.md
 │   ├── songwise_0.csv
