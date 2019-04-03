@@ -25,19 +25,20 @@ users = []
 feat = []
 
 # reads data from csv and converts to dataframes
-def format(file):
-    df = pd.read_csv(file, dtype=np.float64)
-    df=df.drop(['Row'],axis=1)
-
+def format():
+    file = "../perceptual-ratings/similarity/okazaki_SongComparison_1220.csv"
+    df = pd.read_csv(file, sep=',')
+    df= df.drop(['Row'],axis=1)
     df.columns=range(df.shape[1])
 
     for column in df:
         for i in range(20):
-            df[i][column]=df[column][i]
-            df[column][i]=0
+            if(df[column][i]==0 and i<int(column)):
+                x =  df[i][column]
+                df[column][i]=x
         
-    filename = "data/preference/satoru_SongComparison.csv"
-    # filename = "data/similiarity/satoru_SongComparison.csv"
+    # filename = "data/preference/satoru_SongComparison.csv"
+    filename = "../perceptual-ratings/similarity/okazaki_SongComparison_1220.csv"
     if not os.path.exists(os.path.dirname(filename)):
         try:
             os.makedirs(os.path.dirname(filename))
@@ -168,8 +169,8 @@ def similarity(files):
 
     return users
 
-# format(file)
+format()
 # similarity(files)
 # preference(files)
 # feature_wise(files)
-sort(files)
+# sort(files)

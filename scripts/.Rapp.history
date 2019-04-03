@@ -1,0 +1,82 @@
+f1 <- read.csv("../perceptual-ratings/songwise/akira_SongWise.csv", header=FALSE, sep=",")#
+df2 <- read.csv("../perceptual-ratings/songwise/okazaki_SongWise.csv", header=FALSE, sep=",")#
+df3 <- read.csv("../perceptual-ratings/songwise/satoru_SongWise.csv", header=FALSE, sep=",")#
+#
+df <- cbind(df1,df2,df3)#
+cols <- paste("V",1:39,sep="")#
+colnames(df)<- cols
+df1 <- read.csv("../perceptual-ratings/songwise/akira_SongWise.csv", header=FALSE, sep=",")#
+df2 <- read.csv("../perceptual-ratings/songwise/okazaki_SongWise.csv", header=FALSE, sep=",")#
+df3 <- read.csv("../perceptual-ratings/songwise/satoru_SongWise.csv", header=FALSE, sep=",")#
+#
+df <- cbind(df1,df2,df3)#
+cols <- paste("V",1:39,sep="")#
+colnames(df)<- cols
+sound_quality<- df[,c("V26","V39")]#
+sound_quality<-sound_quality[-c(1),]#
+sound_quality<-data.matrix(sound_quality)#
+(setattr(sound_quality,"row.names",rows))#
+icc(sound_quality,model="twoway",type="agreement")#
+focus <- df[,c("V1","V1")]#
+focus<-data.matrix(focus) icc(focus,model="twoway",type="agreement")
+install.packages('data.table')
+library('data.table')
+sound_quality<- df[,c("V26","V39")]#
+sound_quality<-sound_quality[-c(1),]#
+sound_quality<-data.matrix(sound_quality)#
+(setattr(sound_quality,"row.names",rows))#
+icc(sound_quality,model="twoway",type="agreement")#
+focus <- df[,c("V1","V1")]#
+focus<-data.matrix(focus) icc(focus,model="twoway",type="agreement")
+ICCsound_quality,model="twoway",type="agreement")
+ICC(sound_quality,model="twoway",type="agreement")
+library(irr)
+ICC(sound_quality,model="twoway",type="agreement")
+sound_quality<- df[,c("V26","V39")]#
+sound_quality<-sound_quality[-c(1),]#
+sound_quality<-data.matrix(sound_quality)#
+(setattr(sound_quality,"row.names",rows))#
+icc(sound_quality,model="twoway",type="agreement")#
+focus <- df[,c("V1","V1")]#
+focus<-data.matrix(focus) icc(focus,model="twoway",type="agreement")
+setwd('/Users/hideodaikoku/Documents/Comp Music/Experiment/cross-cultural-aesthetics')
+df <- read.csv('~/Documents/Comp Music/ISMIR Draft/Pohle/algorithmic-similarity.csv',header=FALSE,sep=',')
+df <- read.csv('~/Documents/Comp Music/ISMIR Draft/Pohle/algorithmic-simlarity.csv',header=FALSE,sep=',')
+df
+fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
+x <- fit[,1]
+fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
+df <- read.csv('~/Documents/Comp Music/ISMIR Draft/Pohle/algorithmic-simlarity.csv',header=FALSE,sep=',')
+df
+fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
+x <- fit[,1]
+y <- fit[,2]
+plot(x,y,pch=19,col='blue')
+song.names <- ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20',]
+song.names <- ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20']
+song.names <- c('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20')
+text(x,y, pos=4, labels=song.names, offset=0.5)
+title(main = 'Average Similarity Rating', sub = NULL, xlab = NULL, ylab = NULL,#
++       line = NA, outer = FALSE)
+title(main = 'Average Similarity Rating', sub = NULL, xlab = NULL, ylab = NULL, line = NA, outer = FALSE)
+plot(x,y,pch=19,col='63b580')
+plot(x,y,pch=19,col='#63b580')
+song.names <- ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20']
+song.names <- c('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20')
+text(x,y, pos=4, labels=song.names, offset=0.5)
+title(main = 'Average Similarity Rating', sub = NULL, xlab = NULL, ylab = NULL, line = NA, outer = FALSE)
+title(main = 'Automated Similarity Rating', sub = 'Pohle et. al.', xlab = NULL, ylab = NULL, line = NA, outer = FALSE)
+plot(x,y,pch=19,col='#63b580')
+song.names <- c('1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20')
+text(x,y, pos=4, labels=song.names, offset=0.6)
+title(main = 'Automated Similarity Rating', sub = 'Pohle et. al.', xlab = NULL, ylab = NULL, line = NA, outer = FALSE)
+plot(x,y,pch=19,col='#63b580')
+df <- read.csv('~/Documents/Comp Music/ISMIR Draft/Musly/algorithmic-simlarity.csv',header=FALSE,sep=',')
+df <- read.csv('~/Documents/Comp Music/ISMIR Draft/Musly/output.csv',header=FALSE,sep=',')
+df
+fit <- cmdscale(df, k=2, eig=FALSE, add=FALSE,x.ret =FALSE)
+x <- fit[,1]
+y <- fit[,2]
+plot(x,y,pch=19,col='#63b580')
+text(x,y, pos=4, labels=song.names, offset=0.6)
+title(main = 'Automated Similarity Rating', sub = 'Musly', xlab = NULL, ylab = NULL, line = NA, outer = FALSE)
