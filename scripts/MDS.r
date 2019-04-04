@@ -1,62 +1,62 @@
 library(vegan)
 
-drops <- c('X') # Drop first column
 song.names<-c('African','Gamelan','Javanese','Korean','Flamenco','Gagaku','Bata','Xorasani' ,'Arapaho','Djanba','Samba','Jazz','Ballad','Horo','Varnam','Huju','Concerto','Chamber','Alap','Timbre')
 
 # Load rater 1
-okazaki <- read.csv('../perceptual-ratings/similarity/okazaki_SongComparison_1220.csv',sep=",", header=TRUE)
-okazaki <- okazaki[ , !(names(okazaki) %in% drops)]
-okazaki <- 100 -okazaki # similarity to distance
+rater_1 <- read.csv('/Users/hideodaikoku/Documents/Comp Music/cross-cultural-aesthetics/perceptual-ratings/similarity/rater_1.csv',sep=",", header=FALSE)
+rater_1 <- 100 -rater_1 # similarity to distance
 
 # Plot MDS
-fit <- cmdscale(okazaki,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
+fit <- cmdscale(rater_1,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
 x <- fit$points[,1]
 y <- fit$points[,2]
 plot(x,y,pch=19,col='#1ABCBD')
 text(x,y, pos=1, labels=song.names, offset=0.5)
 title(main = 'Individual Similarity Rating', sub = 'Rater 1', xlab = NULL, ylab = NULL,line = NA, outer = FALSE)
 fit$GOF
+#  0.2961205 0.4124755
 
 # Load rater 2
-satoru <- read.csv('../perceptual-ratings/similarity/satoru_SongComparison_1219.csv',sep=",", header=TRUE)
-satoru <- satoru[ , !(names(satoru) %in% drops)]
-satoru <- 100 - satoru # similarity to distance
+rater_2 <- read.csv('/Users/hideodaikoku/Documents/Comp Music/cross-cultural-aesthetics/perceptual-ratings/similarity/rater_2.csv',sep=",", header=FALSE)
+rater_2 <- 100 - rater_2 # similarity to distance
 
 # Plot MDS
-fit <- cmdscale(satoru,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
+fit <- cmdscale(rater_2,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
 x <- fit$points[,1]
 y <- fit$points[,2]
 plot(x,y,pch=19,col='#1ABCBD')
 text(x,y, pos=1, labels=song.names, offset=0.5)
 title(main = 'Individual Similarity Rating', sub = 'Rater 2', xlab = NULL, ylab = NULL,line = NA, outer = FALSE)
 fit$GOF
+#0.2309549 0.3282796
 
 # Load rater 3
-akira <- read.csv('..s/perceptual-ratings/similarity/akira_SongComparison_1223.csv',sep=",", header=TRUE)
-akira <- akira[ , !(names(akira) %in% drops)]
-akira <- 100 - akira # similarity to distance
+rater_3 <- read.csv('/Users/hideodaikoku/Documents/Comp Music/cross-cultural-aesthetics/perceptual-ratings/similarity/rater_3.csv',sep=",", header=FALSE)
+rater_3 <- 100 - rater_3 # similarity to distance
 
 # Plot MDS
-fit <- cmdscale(akira,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
+fit <- cmdscale(rater_3,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
 x <- fit$points[,1]
 y <- fit$points[,2]
 plot(x,y,pch=19,col='#1ABCBD')
 text(x,y, pos=1, labels=song.names, offset=0.5)
 title(main = 'Individual Similarity Rating', sub = 'Rater 3', xlab = NULL, ylab = NULL,line = NA, outer = FALSE)
 fit$GOF
+#  0.2989685 0.4111484
 
 # Average MDS
-average <- (okazaki + satoru + akira )/3
+average <- (rater_1 + rater_2 + rater_3 )/3
 fit <- cmdscale(average,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
 x <- fit$points[,1]
 y <- fit$points[,2]
 plot(x,y,pch=19,col='#1ABCBD')
 text(x,y, pos=1, labels=song.names, offset=0.5)
-title(main = 'AveragenSimilarity Rating', sub = 'All Raters', xlab = NULL, ylab = NULL,line = NA, outer = FALSE)
+title(main = 'Average Similarity Rating', sub = 'All Raters', xlab = NULL, ylab = NULL,line = NA, outer = FALSE)
 fit$GOF
+# 0.2925181 0.3550856
 
 # Load Musly
-musly <- read.csv('../output/musly.csv',sep=",", header=FALSE)
+musly <- read.csv('/Users/hideodaikoku/Documents/Comp Music/cross-cultural-aesthetics/output/musly.csv',sep=",", header=FALSE)
 fit <- cmdscale(musly,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
 x <- fit$points[,1]
 y <- fit$points[,2]
@@ -64,9 +64,10 @@ plot(x,y,pch=19,col='#1ABCBD')
 text(x,y, pos=1, labels=song.names, offset=0.5)
 title(main = 'Automated Analysis', sub = 'Musly', xlab = NULL, ylab = NULL,line = NA, outer = FALSE)
 fit$GOF
+#  0.2944067 0.2944067
 
 # Load Pohle
-pohle <- read.csv('../output/pohle.csv',sep=",", header=FALSE)
+pohle <- read.csv('/Users/hideodaikoku/Documents/Comp Music/cross-cultural-aesthetics/output/pohle.csv',sep=",", header=FALSE)
 fit <- cmdscale(pohle,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
 x <- fit$points[,1]
 y <- fit$points[,2]
@@ -77,7 +78,7 @@ fit$GOF
 
 #scale from 0 to 1
 musly <- data.frame(lapply(musly, function(x) scale(x, center = FALSE, scale = max(x, na.rm = TRUE)/1)))
-pohle <- data.frame(lapply(pohlee, function(x) scale(x, center = FALSE, scale = max(x, na.rm = TRUE)/1)))
+pohle <- data.frame(lapply(pohle, function(x) scale(x, center = FALSE, scale = max(x, na.rm = TRUE)/1)))
 
 # Average Algorithmic
 average_algorithmic <- (pohle + musly)/2
@@ -90,53 +91,51 @@ title(main = 'Average Automated Analysis', sub = 'Pohle and Musly', xlab = NULL,
 fit$GOF
 
 #convert all to distance matrices
-okazaki <- as.dist(okazaki)
-satoru <- as.dist(satoru)
-akira <- as.dist(akira)
+rater_1 <- as.dist(rater_1)
+rater_2 <- as.dist(rater_2)
+rater_3 <- as.dist(rater_3)
 average <- as.dist(average)
 musly <- as.dist(musly)
 pohle <- as.dist(pohle)
 average_algorithmic <- as.dist(average_algorithmic)
 
 # Inter Rater Correlation Values
-mantel(okazaki,satoru,permutations=10000,method="spearman")
-plot(okazaki,satoru, xlab='Rater 1', ylab='Rater 2', pch=19, col='#1ABCBD')
-abline(lm(okazaki~satoru), col="red")
+mantel(rater_1,rater_2,permutations=10000,method="spearman")
+plot(rater_1,rater_2, xlab='Rater 1', ylab='Rater 2', pch=19, col='#1ABCBD')
+abline(lm(rater_1~rater_2), col="red")
 title(main='Inter Rater Correlation')
-# Mantel statistic r: 0.1731 
-#       Significance: 0.014699 
+# Mantel statistic r: 0.03844 
+#       Significance: 0.30577 
 
 # Upper quantiles of permutations (null model):
 #   90%   95% 97.5%   99% 
-# 0.100 0.129 0.155 0.183 
+# 0.100 0.128 0.154 0.183 
 # Permutation: free
 # Number of permutations: 10000
 
-mantel(akira,satoru,permutations=10000,method="spearman")
-plot(akira,satoru, xlab='Rater 3', ylab='Rater 2', pch=19, col='#1ABCBD')
-abline(lm(akira~satoru), col="red")
+mantel(rater_3,rater_2,permutations=10000,method="spearman")
+plot(rater_3,rater_2, xlab='Rater 3', ylab='Rater 2', pch=19, col='#1ABCBD')
+abline(lm(rater_3~rater_2), col="red")
 title(main='Inter Rater Correlation')
-# mantel(xdis = akira, ydis = satoru, method = "spearman", permutations = 10000) 
-
-# Mantel statistic r: 0.3339 
-#       Significance: 9.999e-05 
+# Mantel statistic r: 0.1814 
+#       Significance: 0.0077992 
 
 # Upper quantiles of permutations (null model):
 #    90%    95%  97.5%    99% 
-# 0.0965 0.1238 0.1503 0.1769 
+# 0.0978 0.1260 0.1465 0.1729 
 # Permutation: free
 # Number of permutations: 10000
 
-mantel(okazaki,akira,permutations=10000,method="spearman")
-plot(okazaki,akira, xlab='Rater 1', ylab='Rater 3', pch=19, col='#1ABCBD')
-abline(lm(okazaki~akira), col="red")
+mantel(rater_1,rater_3,permutations=10000,method="spearman")
+plot(rater_1,rater_3, xlab='Rater 1', ylab='Rater 3', pch=19, col='#1ABCBD')
+abline(lm(rater_1~rater_3), col="red")
 title(main='Inter Rater Correlation')
-# Mantel statistic r: 0.1369 
-#       Significance: 0.042196 
+# Mantel statistic r: 0.1152 
+#       Significance: 0.087191 
 
 # Upper quantiles of permutations (null model):
 #   90%   95% 97.5%   99% 
-# 0.101 0.131 0.155 0.181 
+# 0.108 0.140 0.168 0.202 
 # Permutation: free
 # Number of permutations: 10000
 
@@ -157,7 +156,7 @@ title(main='Inter Algorithm Correlation')
 # Number of permutations: 10000
 
 
-# Inter - Algorithm Correlations
+# Algorithm-Human Correlations
 mantel(average,average_algorithmic,permutations=10000,method="spearman")
 plot(average,average_algorithmic, xlab='Human', ylab='Algorithm', pch=19, col='#1ABCBD')
 abline(lm(average~average_algorithmic), col="red")
