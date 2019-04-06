@@ -44,8 +44,34 @@ title(main = 'Individual Similarity Rating', sub = 'Rater 3', xlab = NULL, ylab 
 fit$GOF
 #  0.2989685 0.4111484
 
+# Load rater 4
+rater_4 <- read.csv('/Users/hideodaikoku/Documents/Comp Music/cross-cultural-aesthetics/perceptual-ratings/similarity/rater_4.csv',sep=",", header=FALSE)
+rater_4 <- 100 -rater_4 # similarity to distance
+
+# Plot MDS
+fit <- cmdscale(rater_4,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
+x <- fit$points[,1]
+y <- fit$points[,2]
+plot(x,y,pch=19,col='#1ABCBD')
+text(x,y, pos=1, labels=song.names, offset=0.5)
+title(main = 'Individual Similarity Rating', sub = 'Rater 4', xlab = NULL, ylab = NULL,line = NA, outer = FALSE)
+fit$GOF
+
+# Load rater 5
+rater_5 <- read.csv('/Users/hideodaikoku/Documents/Comp Music/cross-cultural-aesthetics/perceptual-ratings/similarity/rater_5.csv',sep=",", header=FALSE)
+rater_5 <- 100 -rater_5 # similarity to distance
+
+# Plot MDS
+fit <- cmdscale(rater_5,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
+x <- fit$points[,1]
+y <- fit$points[,2]
+plot(x,y,pch=19,col='#1ABCBD')
+text(x,y, pos=1, labels=song.names, offset=0.5)
+title(main = 'Individual Similarity Rating', sub = 'Rater 5', xlab = NULL, ylab = NULL,line = NA, outer = FALSE)
+fit$GOF
+
 # Average MDS
-average <- (rater_1 + rater_2 + rater_3 )/3
+average <- (rater_1 + rater_2 + rater_3 + rater_4 + rater_5 )/5
 fit <- cmdscale(average,k=2, eig=TRUE, add=FALSE,x.ret =FALSE)
 x <- fit$points[,1]
 y <- fit$points[,2]
@@ -53,7 +79,7 @@ plot(x,y,pch=19,col='#1ABCBD')
 text(x,y, pos=1, labels=song.names, offset=0.5)
 title(main = 'Average Similarity Rating', sub = 'All Raters', xlab = NULL, ylab = NULL,line = NA, outer = FALSE)
 fit$GOF
-# 0.2925181 0.3550856
+# 0.2757207 0.3206976
 
 # Load Musly
 musly <- read.csv('/Users/hideodaikoku/Documents/Comp Music/cross-cultural-aesthetics/output/musly.csv',sep=",", header=FALSE)
@@ -94,6 +120,8 @@ fit$GOF
 rater_1 <- as.dist(rater_1)
 rater_2 <- as.dist(rater_2)
 rater_3 <- as.dist(rater_3)
+rater_4 <- as.dist(rater_4)
+rater_5 <- as.dist(rater_5)
 average <- as.dist(average)
 musly <- as.dist(musly)
 pohle <- as.dist(pohle)
@@ -113,29 +141,132 @@ title(main='Inter Rater Correlation')
 # Permutation: free
 # Number of permutations: 10000
 
-mantel(rater_3,rater_2,permutations=10000,method="spearman")
-plot(rater_3,rater_2, xlab='Rater 3', ylab='Rater 2', pch=19, col='#1ABCBD')
-abline(lm(rater_3~rater_2), col="red")
-title(main='Inter Rater Correlation')
-# Mantel statistic r: 0.1814 
-#       Significance: 0.0077992 
-
-# Upper quantiles of permutations (null model):
-#    90%    95%  97.5%    99% 
-# 0.0978 0.1260 0.1465 0.1729 
-# Permutation: free
-# Number of permutations: 10000
-
+# Inter Rater Correlation Values
 mantel(rater_1,rater_3,permutations=10000,method="spearman")
-plot(rater_1,rater_3, xlab='Rater 1', ylab='Rater 3', pch=19, col='#1ABCBD')
+plot(rater_1,rater_4, xlab='Rater 1', ylab='Rater 3', pch=19, col='#1ABCBD')
 abline(lm(rater_1~rater_3), col="red")
 title(main='Inter Rater Correlation')
 # Mantel statistic r: 0.1152 
-#       Significance: 0.087191 
+#       Significance: 0.080392 
 
 # Upper quantiles of permutations (null model):
 #   90%   95% 97.5%   99% 
-# 0.108 0.140 0.168 0.202 
+# 0.106 0.137 0.166 0.196 
+# Permutation: free
+# Number of permutations: 10000
+
+
+# Inter Rater Correlation Values
+mantel(rater_1,rater_4,permutations=10000,method="spearman")
+plot(rater_1,rater_4, xlab='Rater 1', ylab='Rater 4', pch=19, col='#1ABCBD')
+abline(lm(rater_1~rater_4), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: 0.1444 
+#       Significance: 0.032697 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.101 0.130 0.153 0.182 
+# Permutation: free
+# Number of permutations: 10000
+
+# Inter Rater Correlation Values
+mantel(rater_1,rater_5,permutations=10000,method="spearman")
+plot(rater_1,rater_5, xlab='Rater 1', ylab='Rater 5', pch=19, col='#1ABCBD')
+abline(lm(rater_1~rater_5), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: -0.0346 
+#       Significance: 0.68623 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0909 0.1191 0.1414 0.1666 
+# Permutation: free
+# Number of permutations: 10000
+
+
+
+mantel(rater_2,rater_3,permutations=10000,method="spearman")
+plot(rater_2,rater_3, xlab='Rater 2', ylab='Rater 3', pch=19, col='#1ABCBD')
+abline(lm(rater_2~rater_3), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: 0.1814 
+#       Significance: 0.0093991 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0965 0.1262 0.1494 0.1787 
+# Permutation: free
+# Number of permutations: 10000
+
+# Inter Rater Correlation Values
+mantel(rater_2,rater_4,permutations=10000,method="spearman")
+plot(rater_2,rater_4, xlab='Rater 2', ylab='Rater 4', pch=19, col='#1ABCBD')
+abline(lm(rater_2~rater_4), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: 0.004377 
+#       Significance: 0.47505 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0952 0.1224 0.1471 0.1793 
+# Permutation: free
+# Number of permutations: 10000
+
+
+# Inter Rater Correlation Values
+mantel(rater_2,rater_5,permutations=10000,method="spearman")
+plot(rater_2,rater_5, xlab='Rater 2', ylab='Rater 5', pch=19, col='#1ABCBD')
+abline(lm(rater_2~rater_5), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: 0.01257 
+#       Significance: 0.42606 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0919 0.1175 0.1416 0.1685 
+# Permutation: free
+# Number of permutations: 10000
+
+# Inter Rater Correlation Values
+mantel(rater_3,rater_4,permutations=10000,method="spearman")
+plot(rater_3,rater_4, xlab='Rater 3', ylab='Rater 4', pch=19, col='#1ABCBD')
+abline(lm(rater_3~rater_4), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: -0.04555 
+#       Significance: 0.71793 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0944 0.1225 0.1472 0.1742 
+# Permutation: free
+# Number of permutations: 10000
+
+# Inter Rater Correlation Values
+mantel(rater_3,rater_5,permutations=10000,method="spearman")
+plot(rater_3,rater_5, xlab='Rater 3', ylab='Rater 5', pch=19, col='#1ABCBD')
+abline(lm(rater_3~rater_5), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: -0.0789 
+#       Significance: 0.85781 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0934 0.1178 0.1408 0.1642 
+# Permutation: free
+# Number of permutations: 10000
+
+# Inter Rater Correlation Values
+mantel(rater_4,rater_5,permutations=10000,method="spearman")
+plot(rater_4,rater_5, xlab='Rater 1', ylab='Rater 4', pch=19, col='#1ABCBD')
+abline(lm(rater_4~rater_5), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: 0.06488 
+#       Significance: 0.19028 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0944 0.1210 0.1448 0.1695 
 # Permutation: free
 # Number of permutations: 10000
 
@@ -162,11 +293,11 @@ plot(average,average_algorithmic, xlab='Human', ylab='Algorithm', pch=19, col='#
 abline(lm(average~average_algorithmic), col="red")
 title(main='Human vs. Algorithm Correlation')
 
-# Mantel statistic r: 0.03652 
-#       Significance: 0.31777 
+# Mantel statistic r: 0.08581 
+#       Significance: 0.14559 
 
 # Upper quantiles of permutations (null model):
 #   90%   95% 97.5%   99% 
-# 0.104 0.132 0.158 0.189 
+# 0.107 0.137 0.164 0.191 
 # Permutation: free
 # Number of permutations: 10000
