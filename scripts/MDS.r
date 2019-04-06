@@ -184,7 +184,66 @@ title(main='Inter Rater Correlation')
 # Permutation: free
 # Number of permutations: 10000
 
+# ----------------------------------------------------------- 
 
+# Rater - Average Correlation Values
+mantel(rater_1,average,permutations=10000,method="spearman")
+plot(rater_1,average, xlab='Rater 1', ylab='Annotation Average', pch=19, col='#1ABCBD')
+abline(lm(rater_1~average), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: 0.5753 
+#       Significance: 9.999e-05 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.103 0.139 0.171 0.210 
+# Permutation: free
+# Number of permutations: 10000
+
+
+# Rater - Algorithm Correlation Values
+mantel(rater_1,pohle,permutations=10000,method="spearman")
+plot(rater_1,pohle, xlab='Rater 1', ylab='Pohle', pch=19, col='#1ABCBD')
+abline(lm(rater_1~pohle), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: 0.06485 
+#       Significance: 0.25197 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.121 0.153 0.176 0.208 
+# Permutation: free
+# Number of permutations: 10000
+
+# Rater - Algorithm Correlation Values
+mantel(rater_1,musly,permutations=10000,method="spearman")
+plot(rater_1,musly, xlab='Rater 1', ylab='Musly', pch=19, col='#1ABCBD')
+abline(lm(rater_1~musly), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: -0.1345 
+#       Significance: 0.9513 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.105 0.135 0.160 0.194 
+# Permutation: free
+# Number of permutations: 10000
+
+mantel(rater_1,average_algorithmic,permutations=10000,method="spearman")
+plot(rater_1,average_algorithmic, xlab='Rater 1', ylab='Algorithm Average', pch=19, col='#1ABCBD')
+abline(lm(rater_1~average_algorithmic), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: 0.01923 
+#       Significance: 0.41436 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.122 0.155 0.184 0.219 
+# Permutation: free
+# Number of permutations: 10000
+
+
+# ----------------------------------------------------------- 
 
 mantel(rater_2,rater_3,permutations=10000,method="spearman")
 plot(rater_2,rater_3, xlab='Rater 2', ylab='Rater 3', pch=19, col='#1ABCBD')
@@ -228,6 +287,68 @@ title(main='Inter Rater Correlation')
 # Permutation: free
 # Number of permutations: 10000
 
+# ----------------------------------------------------------- 
+
+# Rater - Average Correlation Values
+mantel(rater_2,average,permutations=10000,method="spearman")
+plot(rater_2,average, xlab='Rater 2', ylab='Annotation Average', pch=19, col='#1ABCBD')
+abline(lm(rater_1~average), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: 0.3473 
+#       Significance: 9.999e-05 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0966 0.1223 0.1482 0.1781 
+# Permutation: free
+# Number of permutations: 10000
+
+
+# Rater - Algorithm Correlation Values
+mantel(rater_2,pohle,permutations=10000,method="spearman")
+plot(rater_2,pohle, xlab='Rater 2', ylab='Pohle', pch=19, col='#1ABCBD')
+abline(lm(rater_2~pohle), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: 0.05921 
+#       Significance: 0.22668 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.101 0.129 0.152 0.177 
+# Permutation: free
+# Number of permutations: 10000
+
+
+
+# Rater - Algorithm Correlation Values
+mantel(rater_2,musly,permutations=10000,method="spearman")
+plot(rater_2,musly, xlab='Rater 2', ylab='Musly', pch=19, col='#1ABCBD')
+abline(lm(rater_2~musly), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: -0.05487 
+#       Significance: 0.76562 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0971 0.1232 0.1491 0.1755 
+# Permutation: free
+# Number of permutations: 10000
+
+mantel(rater_2,average_algorithmic,permutations=10000,method="spearman")
+plot(rater_2,average_algorithmic, xlab='Rater 2', ylab='Algorithm Average', pch=19, col='#1ABCBD')
+abline(lm(rater_2~average_algorithmic), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: 0.007624 
+#       Significance: 0.47685 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.103 0.131 0.154 0.181 
+# Permutation: free
+# Number of permutations: 10000
+
+# ----------------------------------------------------------- 
+
 # Inter Rater Correlation Values
 mantel(rater_3,rater_4,permutations=10000,method="spearman")
 plot(rater_3,rater_4, xlab='Rater 3', ylab='Rater 4', pch=19, col='#1ABCBD')
@@ -257,8 +378,67 @@ title(main='Inter Rater Correlation')
 # Number of permutations: 10000
 
 # Inter Rater Correlation Values
+
+# ----------------------------------------------------------- 
+
+# Rater - Average Correlation Values
+mantel(rater_3,average,permutations=10000,method="spearman")
+plot(rater_3,average, xlab='Rater 3', ylab='Annotation Average', pch=19, col='#1ABCBD')
+abline(lm(rater_3~average), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: 0.3547 
+#       Significance: 9.999e-05 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0998 0.1301 0.1534 0.1869 
+# Permutation: free
+# Number of permutations: 10000
+
+# Rater - Algorithm Correlation Values
+mantel(rater_3,pohle,permutations=10000,method="spearman")
+plot(rater_3,pohle, xlab='Rater 3', ylab='Pohle', pch=19, col='#1ABCBD')
+abline(lm(rater_3~pohle), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: 0.2223 
+#       Significance: 0.0066993 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.110 0.142 0.170 0.203 
+# Permutation: free
+# Number of permutations: 10000
+
+# Rater - Algorithm Correlation Values
+mantel(rater_3,musly,permutations=10000,method="spearman")
+plot(rater_3,musly, xlab='Rater 3', ylab='Musly', pch=19, col='#1ABCBD')
+abline(lm(rater_3~musly), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: -0.07322 
+#       Significance: 0.83392 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.100 0.128 0.157 0.192 
+# Permutation: free
+# Number of permutations: 10000
+
+mantel(rater_3,average_algorithmic,permutations=10000,method="spearman")
+plot(rater_3,average_algorithmic, xlab='Rater 3', ylab='Algorithm Average', pch=19, col='#1ABCBD')
+abline(lm(rater_3~average_algorithmic), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: 0.144 
+#       Significance: 0.043696 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.107 0.138 0.169 0.200 
+# Permutation: free
+# Number of permutations: 10000
+
+# ----------------------------------------------------------- 
 mantel(rater_4,rater_5,permutations=10000,method="spearman")
-plot(rater_4,rater_5, xlab='Rater 1', ylab='Rater 4', pch=19, col='#1ABCBD')
+plot(rater_4,rater_5, xlab='Rater 4', ylab='Rater 5', pch=19, col='#1ABCBD')
 abline(lm(rater_4~rater_5), col="red")
 title(main='Inter Rater Correlation')
 # Mantel statistic r: 0.06488 
@@ -270,7 +450,124 @@ title(main='Inter Rater Correlation')
 # Permutation: free
 # Number of permutations: 10000
 
+# ----------------------------------------------------------- 
 
+# Rater - Average Correlation Values
+mantel(rater_4,average,permutations=10000,method="spearman")
+plot(rater_4,average, xlab='Rater 4', ylab='Annotation Average', pch=19, col='#1ABCBD')
+abline(lm(rater_4~average), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: 0.5887 
+#       Significance: 9.999e-05 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0966 0.1218 0.1481 0.1730 
+# Permutation: free
+# Number of permutations: 10000
+
+
+# Rater - Algorithm Correlation Values
+mantel(rater_4,pohle,permutations=10000,method="spearman")
+plot(rater_4,pohle, xlab='Rater 4', ylab='Pohle', pch=19, col='#1ABCBD')
+abline(lm(rater_4~pohle), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: 0.09232 
+#       Significance: 0.12069 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.101 0.131 0.159 0.190 
+# Permutation: free
+# Number of permutations: 10000
+
+
+# Rater - Algorithm Correlation Values
+mantel(rater_4,musly,permutations=10000,method="spearman")
+plot(rater_4,musly, xlab='Rater 4', ylab='Musly', pch=19, col='#1ABCBD')
+abline(lm(rater_4~musly), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: 0.01553 
+#       Significance: 0.42206 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.096 0.124 0.147 0.173 
+# Permutation: free
+# Number of permutations: 10000
+
+mantel(rater_4,average_algorithmic,permutations=10000,method="spearman")
+plot(rater_4,average_algorithmic, xlab='Rater 4', ylab='Algorithm Average', pch=19, col='#1ABCBD')
+abline(lm(rater_4~average_algorithmic), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: 0.05381 
+#       Significance: 0.25137 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.104 0.133 0.156 0.184 
+# Permutation: free
+# Number of permutations: 10000
+
+# ----------------------------------------------------------- 
+
+# Rater - Average Correlation Values
+mantel(rater_5,average,permutations=10000,method="spearman")
+plot(rater_5,average, xlab='Rater 5', ylab='Annotation Average', pch=19, col='#1ABCBD')
+abline(lm(rater_5~average), col="red")
+title(main='Inter Rater Correlation')
+# Mantel statistic r: 0.326 
+#       Significance: 9.999e-05 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0913 0.1163 0.1406 0.1646 
+# Permutation: free
+# Number of permutations: 10000
+
+# Rater - Algorithm Correlation Values
+mantel(rater_5,pohle,permutations=10000,method="spearman")
+plot(rater_5,pohle, xlab='Rater 5', ylab='Pohle', pch=19, col='#1ABCBD')
+abline(lm(rater_5~pohle), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: -0.03734 
+#       Significance: 0.70353 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0915 0.1161 0.1361 0.1598 
+# Permutation: free
+# Number of permutations: 10000
+
+# Rater - Algorithm Correlation Values
+mantel(rater_5,musly,permutations=10000,method="spearman")
+plot(rater_5,musly, xlab='Rater 5', ylab='Musly', pch=19, col='#1ABCBD')
+abline(lm(rater_5~musly), col="red")
+title(main='Rater Algorithm Correlation')
+# Mantel statistic r: 0.08641 
+#       Significance: 0.11549 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.093 0.120 0.141 0.166 
+# Permutation: free
+# Number of permutations: 10000
+
+mantel(rater_5,average_algorithmic,permutations=10000,method="spearman")
+plot(rater_5,average_algorithmic, xlab='Rater 5', ylab='Algorithm Average', pch=19, col='#1ABCBD')
+abline(lm(rater_5~average_algorithmic), col="red")
+title(main='Rater Algorithm Correlation')
+
+# Mantel statistic r: 0.01074 
+#       Significance: 0.44306 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.092 0.118 0.140 0.165 
+# Permutation: free
+# Number of permutations: 10000
+
+# ----------------------------------------------------------- 
 # Inter - Algorithm Correlations
 mantel(musly,pohle,permutations=10000,method="spearman")
 plot(musly,pohle, xlab='Musly 1', ylab='Pohle', pch=19, col='#1ABCBD')
@@ -283,6 +580,48 @@ title(main='Inter Algorithm Correlation')
 # Upper quantiles of permutations (null model):
 #   90%   95% 97.5%   99% 
 # 0.110 0.142 0.170 0.206 
+# Permutation: free
+# Number of permutations: 10000
+
+mantel(pohle,average,permutations=10000,method="spearman")
+# Mantel statistic r: 0.1704 
+#       Significance: 0.019098 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.105 0.134 0.159 0.189 
+# Permutation: free
+# Number of permutations: 10000
+
+
+mantel(musly,average,permutations=10000,method="spearman")
+# Mantel statistic r: -0.07954 
+#       Significance: 0.84702 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0962 0.1246 0.1461 0.1732 
+# Permutation: free
+# Number of permutations: 10000
+
+mantel(pohle,average_algorithmic,permutations=10000,method="spearman")
+# Mantel statistic r: -0.07954 
+#       Significance: 0.85081 
+
+# Upper quantiles of permutations (null model):
+#    90%    95%  97.5%    99% 
+# 0.0997 0.1268 0.1501 0.1811 
+# Permutation: free
+# Number of permutations: 10000
+
+
+mantel(musly,average_algorithmic,permutations=10000,method="spearman")
+# Mantel statistic r: 0.651 
+#       Significance: 9.999e-05 
+
+# Upper quantiles of permutations (null model):
+#   90%   95% 97.5%   99% 
+# 0.108 0.140 0.169 0.201 
 # Permutation: free
 # Number of permutations: 10000
 
