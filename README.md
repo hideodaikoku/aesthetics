@@ -7,42 +7,35 @@ A cross cultural study of perceptual features analysis of World Music.
 
 
 ```
-|── audio
-|── dsp-feature-extractions
-│   |── chroma
-│   |── mel
-│   |── mfcc
-├── feature-correlations
-│   ├── README.md
-│   ├── songwise_0.csv
-│   ├── songwise_1.csv
-│   └── songwise_2.csv
-├── output
-│   ├── avg-feature-correlations.csv
-│   ├── avg-feature-correlations.xls
-│   ├── avg-feature-ratings.csv
-│   ├── avg-preference.csv
-│   ├── avg-similarity.csv
-│   └── similarity-icc.xlsx
-├── perceptual-ratings
-│   ├── preference
-│   │   ├── akira_SongComparison_1223.csv
-│   │   ├── okazaki_SongComparison_1220.csv
-│   │   └── satoru_SongComparison_1219.csv
-│   ├── similarity
-│   │   ├── akira_SongComparison_1223.csv
-│   │   ├── okazaki_SongComparison_1220.csv
-│   │   └── satoru_SongComparison_1219.csv
-│   └── songwise
-│       ├── akira_SongWise.csv
-│       ├── okazaki_SongWise.csv
-│       └── satoru_SongWise.csv
-├── requirements.txt
-└── scripts
-    ├── R_MDS.r
-    ├── compare.py
-    ├── full-similarity.py
-    ├── icc.r
-    ├── scratch2.r
-    └── sorting.py
+|-- README.md
+|-- audio
+|-- dsp-feature-extractions
+|   |-- chroma
+|   |-- mel
+|   |-- mfcc
+|   `-- melodia
+|-- feature-correlations
+|-- features
+|-- output
+|   |-- IRR.csv
+|   |-- avg-feature-correlations.csv
+|   |-- avg-feature-correlations.xls
+|   |-- avg-feature-ratings.csv
+|   |-- avg-preference.csv
+|   |-- avg-similarity.csv
+|   |-- musly.csv
+|   |-- pohle.csv
+|   `-- similarity-icc.xlsx
+|-- perceptual-ratings
+|   |-- backup
+|   |-- preference
+|   |-- similarity
+|   `-- songwise
+|-- requirements.txt
+`-- scripts
+    |-- MDS.r
+    |-- Plot_IRR.ipynb
+    |-- full-similarity.py
+    |-- icc.r
+    `-- sorting.py
 ```
