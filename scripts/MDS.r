@@ -640,3 +640,22 @@ title(main='Human vs. Algorithm Correlation')
 # 0.107 0.137 0.164 0.191 
 # Permutation: free
 # Number of permutations: 10000
+
+fit <- isoMDS(average, y = cmdscale(average, 2), k = 2, maxit = 50, trace = TRUE,tol = 1e-3, p = 2)
+# initial  value 34.580332 
+# final  value 31.465088 
+# converged
+x <- fit$points[,1]
+y <- fit$points[,2]
+plot(x, y, xlab="x", ylab="y",main="Annotation Average", pch=19,col='#1ABCBD')
+text(x, y, pos=1, labels = song.names, cex=.7) 
+
+fit <- isoMDS(average_algorithmic, y = cmdscale(average_algorithmic, 2), k = 2, maxit = 50, trace = TRUE,tol = 1e-3, p = 2)
+# initial  value 29.659587 
+# iter   5 value 24.169760
+# final  value 23.517682 
+# converged
+x <- fit$points[,1]
+y <- fit$points[,2]
+plot(x, y, xlab="x", ylab="y",main="Algorithm Average", pch=19,col='#1ABCBD')
+text(x, y, pos=1, labels = song.names, cex=.7) 
